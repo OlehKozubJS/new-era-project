@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { RangeField, RangeDial, RangeIndicator } from "./style";
+
 const App = () => {
   return (
     <>
@@ -7,10 +9,10 @@ const App = () => {
       <h2>Progress Always Wins!</h2>
       <p>I am back.</p>
 
-      <div>
-        <div></div>
+      <div className={RangeField}>
+        <div className={RangeDial}></div>
       </div>
-      <p></p>
+      <p className={RangeIndicator}>0</p>
     </>
   );
 };
