@@ -3,6 +3,9 @@ import { useState } from "react";
 import { RangeField, RangeDial, RangeIndicator } from "./style";
 
 const App = () => {
+  const [] = useState();
+  const [] = useState();
+
   return (
     <>
       <h1>Hello World!</h1>
