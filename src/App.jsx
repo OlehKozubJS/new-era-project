@@ -7,11 +7,19 @@ const App = () => {
   const [rangeValue, setRangeValue] = useState(0);
   const [currentX, setCurrentX] = useState(0);
 
-  const handleMouseDown = () => {
+  const handleMouseDown = (event) => {
     setIsDraggable(true);
+    setCurrentX(event.clientX - rangeValue);
   };
 
-  const handleMouseMove = () => {};
+  const handleMouseMove = (event) => {
+    if (isDraggable) {
+      const newRangeValue = event.clientX - currentX;
+      if (newRangeValue >= 0 && newRangeValue <= 450) {
+        setRangeValue(newRangeValue);
+      }
+    }
+  };
 
   const handleMouseUp = () => {
     setIsDraggable(false);
@@ -28,11 +36,11 @@ const App = () => {
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
-          style={{ width: rangeValue }}
+          style={{ left: rangeValue }}
           className={RangeDial}
         ></div>
       </div>
-      <p className={RangeIndicator}>0</p>
+      <p className={RangeIndicator}>{rangeValue}</p>
     </>
   );
 };
