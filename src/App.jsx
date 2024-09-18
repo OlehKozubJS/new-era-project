@@ -3,8 +3,8 @@ import { useState } from "react";
 import { RangeField, RangeDial, RangeIndicator } from "./style";
 
 const App = () => {
-  const [] = useState();
-  const [] = useState();
+  const [isDraggable, setIsDraggable] = useState(false);
+  const [rangeValue, setRangeValue] = useState(0);
 
   return (
     <>
