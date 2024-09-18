@@ -36,6 +36,7 @@ const App = () => {
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseUp}
           style={{ left: rangeValue }}
           className={RangeDial}
         ></div>
