@@ -5,6 +5,17 @@ import { RangeField, RangeDial, RangeIndicator } from "./style";
 const App = () => {
   const [isDraggable, setIsDraggable] = useState(false);
   const [rangeValue, setRangeValue] = useState(0);
+  const [currentX, setCurrentX] = useState(0);
+
+  const handleMouseDown = () => {
+    setIsDraggable(true);
+  };
+
+  const handleMouseMove = () => {};
+
+  const handleMouseUp = () => {
+    setIsDraggable(false);
+  };
 
   return (
     <>
@@ -13,7 +24,13 @@ const App = () => {
       <p>I am back.</p>
 
       <div className={RangeField}>
-        <div className={RangeDial}></div>
+        <div
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          style={{ width: rangeValue }}
+          className={RangeDial}
+        ></div>
       </div>
       <p className={RangeIndicator}>0</p>
     </>
