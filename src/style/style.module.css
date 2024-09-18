@@ -1,8 +1,11 @@
 .RangeField {
+  background-color: rgb(200, 200, 250);
 }
 
 .RangeDial {
+  background-color: rgb(100, 100, 250);
 }
 
 .RangeIndicator {
+  color: rgb(0, 0, 250);
 }
