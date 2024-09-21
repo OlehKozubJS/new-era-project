@@ -42,6 +42,7 @@ const App = () => {
         ></div>
       </div>
       <p className={RangeIndicator}>{rangeValue}</p>
+      <div>This is a new div component</div>
     </>
   );
 };
