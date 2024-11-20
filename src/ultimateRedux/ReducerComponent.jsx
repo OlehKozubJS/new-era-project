@@ -4,10 +4,10 @@ import { ReducerComponentBase } from "./ReducerComponentBase";
 
 import { setCommonReducer, getCommonReducer } from "./slice";
 
-const ReducerComponent = ({ children, reducers, blacklist, whitelist }) => {
+const ReducerComponent = ({ children }) => {
   const dispatch = useDispatch();
 
-  const store = useSelector();
+  const store = useSelector(getCommonReducer);
 
   return <ReducerComponentBase>{children}</ReducerComponentBase>;
 };
