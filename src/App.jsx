@@ -62,7 +62,7 @@ const App = () => {
         ></div>
       </div>
       <button type="button" onClick={clearRangeValue}>
-        Crear range value
+        Clear range value
       </button>
       <p className={RangeIndicator}>{rangeValue}</p>
     </div>
