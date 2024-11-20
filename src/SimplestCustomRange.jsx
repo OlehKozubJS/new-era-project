@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import { RangeField, RangeDial, RangeIndicator } from "./style";
 
-const App = () => {
+const SimplestCustomRange = () => {
   const [isDraggable, setIsDraggable] = useState(false);
   const [rangeValue, setRangeValue] = useState(0);
   const [mouseDownX, setMouseDownX] = useState(0);
@@ -64,9 +64,8 @@ const App = () => {
       <button type="button" onClick={clearRangeValue}>
         Clear range value
       </button>
-      <p className={RangeIndicator}>{rangeValue}</p>
     </div>
   );
 };
 
-export { App };
+export { SimplestCustomRange };
