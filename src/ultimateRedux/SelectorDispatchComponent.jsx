@@ -2,21 +2,21 @@ import { useEffect } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 
-import { setCommonReducer, getCommonReducer } from "./slice";
+import { setState, getState } from "./slice";
 
-const SelectorDispatchComponent = ({ setState, getState }) => {
+const SelectorDispatchComponent = ({ newState, getNewState }) => {
   const dispatch = useDispatch();
 
-  const state = useSelector(getCommonReducer);
+  const state = useSelector(getState);
 
   useEffect(() => {
-    if (setState) {
-      dispatch(setCommonReducer(setState));
+    if (newState) {
+      dispatch(setState(newState));
     }
   }, []);
 
   useEffect(() => {
-    getState(state);
+    getNewState(state);
   }, []);
 
   return <div></div>;
