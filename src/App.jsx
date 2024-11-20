@@ -6,7 +6,7 @@ import { setCommonReducer, getCommonReducer } from "./ultimateRedux";
 
 import { SimplestCustomRange } from "./SimplestCustomRange";
 
-import { RangeField, RangeDial, RangeIndicator } from "./style";
+import { RangeIndicator } from "./style";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -27,10 +27,11 @@ const App = () => {
 
   return (
     <div>
+      <SimplestCustomRange />
       <button type="button" onClick={clearRangeValue}>
         Clear range value
       </button>
-      <p className={RangeIndicator}>{rangeValue}</p>
+      <p className={RangeIndicator}>{value}</p>
     </div>
   );
 };
