@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import { useDispatch } from "react-redux";
 
-import { setCommonReducer, getCommonReducer } from "./ultimateRedux";
+import { setState, getState } from "./ultimateRedux";
 
 import { RangeField, RangeDial } from "./style";
 
