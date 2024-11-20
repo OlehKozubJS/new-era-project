@@ -14,7 +14,7 @@ const App = () => {
   const { value } = useSelector(getState);
 
   const clearRangeValue = () => {
-    dispatch(setState(0));
+    dispatch(setState({ value: 0 }));
   };
 
   return (
