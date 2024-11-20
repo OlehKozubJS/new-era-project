@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 
-import {} from "./ultimateRedux";
+import { setState, getState } from "./ultimateRedux";
 
 import { SimplestCustomRange } from "./SimplestCustomRange";
 
