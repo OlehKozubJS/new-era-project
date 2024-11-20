@@ -11,7 +11,7 @@ import { RangeIndicator } from "./style";
 const App = () => {
   const dispatch = useDispatch();
 
-  const value = useSelector(getCommonReducer).value;
+  const { value } = useSelector(getCommonReducer);
 
   const clearRangeValue = () => {
     dispatch(setCommonReducer(0));
