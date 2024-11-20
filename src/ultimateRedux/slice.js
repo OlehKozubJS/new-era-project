@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const slice = createSlice({
-  name: "commonReducer",
+  name: "reducer",
   initialState: { state: {} },
   reducers: {
     setCommonReducer(state, action) {
@@ -10,7 +10,7 @@ const slice = createSlice({
   },
 });
 
-const { reducer } = slice;
+const { reducer } = slice.reducer;
 
 const { setState } = slice.actions;
 
