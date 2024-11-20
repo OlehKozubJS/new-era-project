@@ -10,7 +10,7 @@ const commonSlice = createSlice({
   },
 });
 
-const { commonReducer } = commonSlice.reducer;
+const commonReducer = commonSlice.reducer;
 
 const { setState } = commonSlice.actions;
 
