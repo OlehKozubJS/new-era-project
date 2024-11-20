@@ -13,11 +13,11 @@ import {
 
 import storage from "redux-persist/lib/storage";
 
-import { commonReducer } from "./slice";
+import { reducer } from "./slice";
 
 const getStoreAndPersistor = () => {
   const store = configureStore({
-    reducer: persistReducer({ key: "root", storage }, commonReducer),
+    reducer: persistReducer({ key: "root", storage }, reducer),
     middleware: (getDefaultMiddleware) => {
       return getDefaultMiddleware({
         serializableCheck: {
