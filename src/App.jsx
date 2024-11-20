@@ -29,11 +29,7 @@ const App = () => {
   };
 
   return (
-    <>
-      <h1>Hello World!</h1>
-      <h2>Progress Always Wins!</h2>
-      <p>I am back.</p>
-
+    <div>
       <div className={RangeField}>
         <div
           onMouseDown={handleMouseDown}
@@ -45,8 +41,7 @@ const App = () => {
         ></div>
       </div>
       <p className={RangeIndicator}>{rangeValue}</p>
-      <div>This is a new div component</div>
-    </>
+    </div>
   );
 };
 
