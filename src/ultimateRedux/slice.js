@@ -5,7 +5,7 @@ const commonSlice = createSlice({
   initialState: { state },
   reducers: {
     setCommonReducer(state, action) {
-      return action.payload;
+      return { state: action.payload };
     },
   },
 });
