@@ -9,17 +9,16 @@ const App = () => {
 
   const handleMouseDown = (event) => {
     setIsDraggable(true);
-    setMouseDownX(event.clientX - rangeValue);
+    setMouseDownX(event.clientX /*- rangeValue*/);
   };
 
   const handleMouseMove = (event) => {
     event.preventDefault();
-
+    const currentRangeValue = rangeValue;
     if (isDraggable) {
-      const currentRangeValue = rangeValue;
       const mouseMoveX = event.clientX;
-      //const newRangeValue = currentRangeValue + mouseMoveX - mouseDownX;
-      const newRangeValue = mouseMoveX - mouseDownX;
+      const newRangeValue = currentRangeValue + mouseMoveX - mouseDownX;
+      //const newRangeValue = mouseMoveX - mouseDownX;
       if (newRangeValue >= 0 && newRangeValue <= 450) {
         setRangeValue(newRangeValue);
       }
