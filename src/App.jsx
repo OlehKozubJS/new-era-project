@@ -9,40 +9,7 @@ import { SimplestCustomRange } from "./SimplestCustomRange";
 import { RangeField, RangeDial, RangeIndicator } from "./style";
 
 const App = () => {
-const dispatch = 
-
-  const handleMouseDown = (event) => {
-    setIsDraggable(true);
-    setMouseDownX(event.clientX);
-  };
-
-  const handleMouseMove = (event) => {
-    event.preventDefault();
-
-    if (!isDraggable) {
-      return;
-    }
-
-    const currentRangeValue = rangeValue;
-    const mouseMoveX = event.clientX;
-    const newRangeValue = currentRangeValue + mouseMoveX - mouseDownX;
-
-    if (newRangeValue >= 0 && newRangeValue <= 450) {
-      setRangeValue(newRangeValue);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("mousemove", handleMouseMove);
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, [isDraggable]);
-
-  const handleMouseUp = () => {
-    setIsDraggable(false);
-  };
+  const dispatch = useDispatch();
 
   useEffect(() => {
     window.addEventListener("mouseup", handleMouseUp);
@@ -53,7 +20,7 @@ const dispatch =
   }, [isDraggable]);
 
   const clearRangeValue = () => {
-    setRangeValue(0);
+    dispatch(0);
   };
 
   return (
