@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { RangeField, RangeDial, RangeIndicator } from "./style";
 
@@ -14,16 +14,27 @@ const App = () => {
 
   const handleMouseMove = (event) => {
     event.preventDefault();
+
+    if (!isDraggable) {
+      return;
+    }
+
     const currentRangeValue = rangeValue;
-    if (isDraggable) {
-      const mouseMoveX = event.clientX;
-      const newRangeValue = currentRangeValue + mouseMoveX - mouseDownX;
-      //const newRangeValue = mouseMoveX - mouseDownX;
-      if (newRangeValue >= 0 && newRangeValue <= 450) {
-        setRangeValue(newRangeValue);
-      }
+    const mouseMoveX = event.clientX;
+    const newRangeValue = currentRangeValue + mouseMoveX - mouseDownX;
+
+    if (newRangeValue >= 0 && newRangeValue <= 450) {
+      setRangeValue(newRangeValue);
     }
   };
+
+  useEffect(() => {
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, [isDraggable]);
 
   const handleMouseUp = () => {
     setIsDraggable(false);
@@ -38,7 +49,6 @@ const App = () => {
       <div className={RangeField}>
         <div
           onMouseDown={handleMouseDown}
-          onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
           onMouseLeave={handleMouseUp}
           style={{ left: rangeValue }}
