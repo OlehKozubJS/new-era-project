@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 
-import { ReducerComponent } from "./ultimateRedux";
+import { setCommonReducer, getCommonReducer } from "./ultimateRedux";
 
 import { SimplestCustomRange } from "./SimplestCustomRange";
 
