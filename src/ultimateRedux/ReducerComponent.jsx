@@ -1,15 +1,20 @@
-import { useSelector, useDispatch } from "react-redux";
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
 
-import { ReducerComponentBase } from "./ReducerComponentBase";
+import { useState } from "react";
 
-import { setCommonReducer, getCommonReducer } from "./slice";
+import { getStoreAndPersistor } from "./store";
 
-const ReducerComponent = ({ children }) => {
-  const dispatch = useDispatch();
+const ReducerComponentBase = ({ children }) => {
+  const [{ store, persistor }] = useState(getStoreAndPersistor());
 
-  const store = useSelector(getCommonReducer);
-
-  return <ReducerComponentBase>{children}</ReducerComponentBase>;
+  return (
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        {children}
+      </PersistGate>
+    </Provider>
+  );
 };
 
-export { ReducerComponent };
+export { ReducerComponentBase };
