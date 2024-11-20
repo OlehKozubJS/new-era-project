@@ -1,22 +1,13 @@
-import { Provider } from "react-redux";
-import { PersistGate } from "redux-persist/integration/react";
+import { useSelector, useDispatch } from "react-redux";
 
-import { useState } from "react";
-
-import { getStoreAndPersistor } from "./store";
+import ReducerComponentBase
 
 const ReducerComponent = ({ children, reducers, blacklist, whitelist }) => {
   const [{ store, persistor }] = useState(
     getStoreAndPersistor({ reducers, blacklist, whitelist })
   );
 
-  return (
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        {children}
-      </PersistGate>
-    </Provider>
-  );
+  return <ReducerComponentBase></ReducerComponentBase>;
 };
 
 export { ReducerComponent };
