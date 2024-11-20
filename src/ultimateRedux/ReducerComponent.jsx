@@ -5,7 +5,7 @@ import { useState } from "react";
 
 import { getStoreAndPersistor } from "./store";
 
-const ReducerComponentBase = ({ children }) => {
+const ReducerComponent = ({ children }) => {
   const [{ store, persistor }] = useState(getStoreAndPersistor());
 
   return (
@@ -17,4 +17,4 @@ const ReducerComponentBase = ({ children }) => {
   );
 };
 
-export { ReducerComponentBase };
+export { ReducerComponent };
