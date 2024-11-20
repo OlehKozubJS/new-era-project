@@ -9,7 +9,7 @@ import { RangeField, RangeDial } from "./style";
 const SimplestCustomRange = () => {
   const dispatch = useDispatch();
 
-  const { value } = useSelector(getState);
+  const stateRangeValue = useSelector(getState);
 
   const [isDraggable, setIsDraggable] = useState(false);
   const [rangeValue, setRangeValue] = useState(value);
@@ -61,8 +61,8 @@ const SimplestCustomRange = () => {
   }, [rangeValue]);
 
   useEffect(() => {
-    setRangeValue(value);
-  }, [value]);
+    setRangeValue(stateRangeValue);
+  }, [stateRangeValue]);
 
   return (
     <div className={RangeField}>
