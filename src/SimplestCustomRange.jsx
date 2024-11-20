@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 
-import { RangeField, RangeDial, RangeIndicator } from "./style";
+import { setCommonReducer, getCommonReducer } from "./ultimateRedux";
+
+import { RangeField, RangeDial } from "./style";
 
 const SimplestCustomRange = () => {
   const [isDraggable, setIsDraggable] = useState(false);
