@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+import { SimplestCustomRange } from "./SimplestCustomRange";
+
 import { RangeField, RangeDial, RangeIndicator } from "./style";
 
 const App = () => {
