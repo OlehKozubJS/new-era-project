@@ -13,6 +13,8 @@ const App = () => {
   };
 
   const handleMouseMove = (event) => {
+    event.preventDefault();
+
     if (isDraggable) {
       const currentRangeValue = rangeValue;
       const mouseMoveX = event.clientX;
