@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const CommonSlice = createSlice({
+const commonSlice = createSlice({
   name: "commonReducer",
   initialState: {},
   reducers: {
@@ -10,9 +10,9 @@ const CommonSlice = createSlice({
   },
 });
 
-const commonReducer = newSlice.reducer;
+const commonReducer = commonSlice.reducer;
 
-const { setCommonReducer } = newSlice.actions;
+const { setCommonReducer } = commonSlice.actions;
 
 const getCommonReducer = (state) => {
   return state;
