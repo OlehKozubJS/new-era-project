@@ -1,4 +1,4 @@
 import { ReducerComponent } from "./ReducerComponent";
-import { createNewReducer } from "./slice";
+import { SelectorDispatchComponent } from "./SelectorDispatchComponent";
 
-export { ReducerComponent, createNewReducer };
+export { ReducerComponent, SelectorDispatchComponent };
