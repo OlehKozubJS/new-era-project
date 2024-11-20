@@ -17,7 +17,7 @@ import storage from "redux-persist/lib/storage";
 
 import { commonReducer } from "./slice";
 
-const getStoreAndPersistor = ({ reducers }) => {
+const getStoreAndPersistor = () => {
   const store = configureStore({
     reducer: persistReducer({ key: "root", storage }, commonReducer),
     middleware: (getDefaultMiddleware) => {
