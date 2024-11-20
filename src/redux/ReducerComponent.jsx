@@ -3,11 +3,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { ReducerComponentBase } from "./ReducerComponentBase";
 
 const ReducerComponent = ({ children, reducers, blacklist, whitelist }) => {
-  const [{ store, persistor }] = useState(
-    getStoreAndPersistor({ reducers, blacklist, whitelist })
-  );
+  const dispatch = useDispatch();
 
-  return <ReducerComponentBase></ReducerComponentBase>;
+  return <ReducerComponentBase>{children}</ReducerComponentBase>;
 };
 
 export { ReducerComponent };
