@@ -18,4 +18,4 @@ const getState = ({ state }) => {
   return state;
 };
 
-export { commonReducer, setState, getState };
+export { reducer, setState, getState };
