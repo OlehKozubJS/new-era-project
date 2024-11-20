@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import { useDispatch } from "react-redux";
 
-import { setState, getState } from "./ultimateRedux";
+import { setState } from "./ultimateRedux";
 
 import { RangeField, RangeDial } from "./style";
 
@@ -54,12 +54,8 @@ const SimplestCustomRange = () => {
     };
   }, [isDraggable]);
 
-  const clearRangeValue = () => {
-    setRangeValue(0);
-  };
-
   useEffect(() => {
-    dispatch(setCommonReducer({ value: rangeValue }));
+    dispatch(setState({ value: rangeValue }));
   }, [rangeValue]);
 
   return (
