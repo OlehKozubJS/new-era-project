@@ -11,6 +11,8 @@ import { RangeField, RangeDial, RangeIndicator } from "./style";
 const App = () => {
   const dispatch = useDispatch();
 
+  const value = useSelector(getCommonReducer).value;
+
   useEffect(() => {
     window.addEventListener("mouseup", handleMouseUp);
 
@@ -20,7 +22,7 @@ const App = () => {
   }, [isDraggable]);
 
   const clearRangeValue = () => {
-    dispatch(0);
+    dispatch(setCommonReducer(0));
   };
 
   return (
