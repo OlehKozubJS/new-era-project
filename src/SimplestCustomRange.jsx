@@ -12,7 +12,7 @@ const SimplestCustomRange = () => {
   const stateRangeValue = useSelector(getState);
 
   const [isDraggable, setIsDraggable] = useState(false);
-  const [rangeValue, setRangeValue] = useState(value);
+  const [rangeValue, setRangeValue] = useState(stateRangeValue);
   const [mouseDownX, setMouseDownX] = useState(0);
 
   const handleMouseDown = (event) => {
