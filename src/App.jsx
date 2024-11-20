@@ -28,6 +28,10 @@ const App = () => {
     setIsDraggable(false);
   };
 
+  const clearRangeValue = () => {
+    setRangeValue(0);
+  };
+
   return (
     <div>
       <div className={RangeField}>
@@ -40,6 +44,9 @@ const App = () => {
           className={RangeDial}
         ></div>
       </div>
+      <button type="button" onClick={clearRangeValue}>
+        Crear range value
+      </button>
       <p className={RangeIndicator}>{rangeValue}</p>
     </div>
   );
