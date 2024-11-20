@@ -11,10 +11,10 @@ import { RangeIndicator } from "./style";
 const App = () => {
   const dispatch = useDispatch();
 
-  const { value } = useSelector(getState);
+  const stateRangeValue = useSelector(getState);
 
   const clearRangeValue = () => {
-    dispatch(setState({ value: 0 }));
+    dispatch(setState(0));
   };
 
   return (
@@ -23,7 +23,7 @@ const App = () => {
       <button type="button" onClick={clearRangeValue}>
         Clear range value
       </button>
-      <p className={RangeIndicator}>{value}</p>
+      <p className={RangeIndicator}>{stateRangeValue}</p>
     </div>
   );
 };
