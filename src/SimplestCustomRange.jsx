@@ -53,17 +53,12 @@ const SimplestCustomRange = () => {
   };
 
   return (
-    <div>
-      <div className={RangeField}>
-        <div
-          onMouseDown={handleMouseDown}
-          style={{ left: rangeValue }}
-          className={RangeDial}
-        ></div>
-      </div>
-      <button type="button" onClick={clearRangeValue}>
-        Clear range value
-      </button>
+    <div className={RangeField}>
+      <div
+        onMouseDown={handleMouseDown}
+        style={{ left: rangeValue }}
+        className={RangeDial}
+      ></div>
     </div>
   );
 };
