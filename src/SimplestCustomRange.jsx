@@ -59,7 +59,7 @@ const SimplestCustomRange = () => {
   };
 
   useEffect(() => {
-    dispatch;
+    dispatch(setCommonReducer({ value: rangeValue }));
   }, [rangeValue]);
 
   return (
