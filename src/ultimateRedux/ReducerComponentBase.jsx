@@ -5,10 +5,8 @@ import { useState } from "react";
 
 import { getStoreAndPersistor } from "./store";
 
-const ReducerComponentBase = ({ children, reducers, blacklist, whitelist }) => {
-  const [{ store, persistor }] = useState(
-    getStoreAndPersistor({ reducers, blacklist, whitelist })
-  );
+const ReducerComponentBase = ({ children }) => {
+  const [{ store, persistor }] = useState(getStoreAndPersistor());
 
   return (
     <Provider store={store}>
