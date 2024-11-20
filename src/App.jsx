@@ -5,16 +5,19 @@ import { RangeField, RangeDial, RangeIndicator } from "./style";
 const App = () => {
   const [isDraggable, setIsDraggable] = useState(false);
   const [rangeValue, setRangeValue] = useState(0);
-  const [currentX, setCurrentX] = useState(0);
+  const [mouseDownX, setMouseDownX] = useState(0);
 
   const handleMouseDown = (event) => {
     setIsDraggable(true);
-    setCurrentX(event.clientX - rangeValue);
+    setMouseDownX(event.clientX);
   };
 
   const handleMouseMove = (event) => {
     if (isDraggable) {
-      const newRangeValue = event.clientX - currentX;
+      const currentRangeValue = rangeValue;
+      const mouseMoveX = event.clientX;
+      const newRangeValue = currentRangeValue + mouseMoveX - currentX;
+
       if (newRangeValue >= 0 && newRangeValue <= 450) {
         setRangeValue(newRangeValue);
       }
