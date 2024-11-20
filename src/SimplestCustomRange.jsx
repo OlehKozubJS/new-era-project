@@ -1,16 +1,18 @@
 import { useEffect, useState } from "react";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
-import { setState } from "./ultimateRedux";
+import { setState, getState } from "./ultimateRedux";
 
 import { RangeField, RangeDial } from "./style";
 
 const SimplestCustomRange = () => {
   const dispatch = useDispatch();
 
+  const { value } = useSelector(getState);
+
   const [isDraggable, setIsDraggable] = useState(false);
-  const [rangeValue, setRangeValue] = useState(0);
+  const [rangeValue, setRangeValue] = useState(value);
   const [mouseDownX, setMouseDownX] = useState(0);
 
   const handleMouseDown = (event) => {
@@ -57,6 +59,10 @@ const SimplestCustomRange = () => {
   useEffect(() => {
     dispatch(setState({ value: rangeValue }));
   }, [rangeValue]);
+
+  useEffect(() => {
+    setRangeValue(value);
+  }, [value]);
 
   return (
     <div className={RangeField}>
