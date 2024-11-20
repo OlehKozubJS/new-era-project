@@ -1,10 +1,5 @@
 import { ReducerComponent } from "./ReducerComponent";
 import { SelectorDispatchComponent } from "./SelectorDispatchComponent";
-import { setCommonReducer, getCommonReducer } from "./slice";
+import { setState, getState } from "./slice";
 
-export {
-  ReducerComponent,
-  SelectorDispatchComponent,
-  setCommonReducer,
-  getCommonReducer,
-};
+export { ReducerComponent, SelectorDispatchComponent, setState, getState };
