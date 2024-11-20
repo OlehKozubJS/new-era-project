@@ -57,7 +57,7 @@ const SimplestCustomRange = () => {
   }, [isDraggable]);
 
   useEffect(() => {
-    dispatch(setState({ value: rangeValue }));
+    dispatch(setState(rangeValue));
   }, [rangeValue]);
 
   useEffect(() => {
