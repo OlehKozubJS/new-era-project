@@ -9,7 +9,7 @@ const App = () => {
 
   const handleMouseDown = (event) => {
     setIsDraggable(true);
-    setMouseDownX(event.clientX /*- rangeValue*/);
+    setMouseDownX(event.clientX);
   };
 
   const handleMouseMove = (event) => {
@@ -40,6 +40,14 @@ const App = () => {
     setIsDraggable(false);
   };
 
+  useEffect(() => {
+    window.addEventListener("mouseup", handleMouseUp);
+
+    return () => {
+      window.removeEventListener("mouseup", handleMouseUp);
+    };
+  }, [isDraggable]);
+
   const clearRangeValue = () => {
     setRangeValue(0);
   };
@@ -49,8 +57,6 @@ const App = () => {
       <div className={RangeField}>
         <div
           onMouseDown={handleMouseDown}
-          onMouseUp={handleMouseUp}
-          onMouseLeave={handleMouseUp}
           style={{ left: rangeValue }}
           className={RangeDial}
         ></div>
