@@ -13,14 +13,6 @@ const App = () => {
 
   const value = useSelector(getCommonReducer).value;
 
-  useEffect(() => {
-    window.addEventListener("mouseup", handleMouseUp);
-
-    return () => {
-      window.removeEventListener("mouseup", handleMouseUp);
-    };
-  }, [isDraggable]);
-
   const clearRangeValue = () => {
     dispatch(setCommonReducer(0));
   };
