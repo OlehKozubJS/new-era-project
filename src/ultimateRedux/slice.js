@@ -1,25 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const createNewReducer = ({ name, initialState }) => {
-  const newSlice = createSlice({
-    name,
-    initialState,
-    reducers: {
-      setNewReducer(state, action) {
-        return action.payload;
-      },
+const CommonSlice = createSlice({
+  name: "commonReducer",
+  initialState: {},
+  reducers: {
+    setCommonReducer(state, action) {
+      return action.payload;
     },
-  });
+  },
+});
 
-  const newReducer = newSlice.reducer;
+const commonReducer = newSlice.reducer;
 
-  const { setNewReducer } = newSlice.actions;
+const { setCommonReducer } = newSlice.actions;
 
-  const getNewReducer = (state) => {
-    return state[name];
-  };
-
-  return [newReducer, setNewReducer, getNewReducer];
+const getCommonReducer = (state) => {
+  return state;
 };
 
-export { createNewReducer };
+export { commonReducer, setCommonReducer, getCommonReducer };
