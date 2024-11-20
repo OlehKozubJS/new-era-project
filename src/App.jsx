@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 
+import { useDispatch, useSelector } from "react-redux";
+
+import { ReducerComponent } from "./ultimateRedux";
+
 import { SimplestCustomRange } from "./SimplestCustomRange";
 
 import { RangeField, RangeDial, RangeIndicator } from "./style";
 
 const App = () => {
-  const [isDraggable, setIsDraggable] = useState(false);
-  const [rangeValue, setRangeValue] = useState(0);
-  const [mouseDownX, setMouseDownX] = useState(0);
+const dispatch = 
 
   const handleMouseDown = (event) => {
     setIsDraggable(true);
