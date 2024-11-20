@@ -5,7 +5,7 @@ import { useState } from "react";
 
 import { getStoreAndPersistor } from "./store";
 
-const ReducerComponent = ({ children, reducers, blacklist, whitelist }) => {
+const ReducerComponentBase = ({ children, reducers, blacklist, whitelist }) => {
   const [{ store, persistor }] = useState(
     getStoreAndPersistor({ reducers, blacklist, whitelist })
   );
@@ -19,4 +19,4 @@ const ReducerComponent = ({ children, reducers, blacklist, whitelist }) => {
   );
 };
 
-export { ReducerComponent };
+export { ReducerComponentBase };
