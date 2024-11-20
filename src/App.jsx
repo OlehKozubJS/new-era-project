@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 
-import { setCommonReducer, getCommonReducer } from "./ultimateRedux";
+import {} from "./ultimateRedux";
 
 import { SimplestCustomRange } from "./SimplestCustomRange";
 
@@ -11,10 +11,10 @@ import { RangeIndicator } from "./style";
 const App = () => {
   const dispatch = useDispatch();
 
-  const { value } = useSelector(getCommonReducer);
+  const { value } = useSelector(getState);
 
   const clearRangeValue = () => {
-    dispatch(setCommonReducer(0));
+    dispatch(setState(0));
   };
 
   return (
