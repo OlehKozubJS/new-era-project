@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-
 import { useDispatch, useSelector } from "react-redux";
 
 import { setState, getState } from "./ultimateRedux";
 
 import { SimplestCustomRange } from "./SimplestCustomRange";
+import { DigitKeyboardInput } from "./DigitKeyboardInput";
 
 import { RangeIndicator } from "./style";
 
@@ -24,6 +24,7 @@ const App = () => {
         Clear range value
       </button>
       <p className={RangeIndicator}>{stateRangeValue}</p>
+      <DigitKeyboardInput />
     </div>
   );
 };
