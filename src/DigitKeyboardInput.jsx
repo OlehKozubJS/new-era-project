@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { characters } from "./dataBase";
 
 const DigitKeyboardInput = () => {
+  const [] = useState(0);
   const [firstDigit, setFirstDigit] = useState(0);
   const [secondDigit, setSecondDigit] = useState(0);
 
@@ -18,9 +19,11 @@ const DigitKeyboardInput = () => {
     }
   };
 
+  useEffect(() => {}, []);
+
   return (
     <>
-      <p></p>
+      <p>{}</p>
       {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((digit) => {
         return (
           <button key={digit} value={digit}>
