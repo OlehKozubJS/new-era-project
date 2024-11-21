@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-
 import { useDispatch, useSelector } from "react-redux";
+
+import { handleEventListener } from "./hooks";
 
 import { setState, getState } from "./ultimateRedux";
 
