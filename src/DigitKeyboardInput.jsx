@@ -6,7 +6,17 @@ const DigitKeyboardInput = () => {
   const [firstDigit, setFirstDigit] = useState(0);
   const [secondDigit, setSecondDigit] = useState(0);
 
-  const handleClick = (event) => {};
+  const handleClick = (event) => {
+    const newDigit = event.target.value;
+
+    if (!firstDigit) {
+      setFirstDigit(newDigit);
+    } else if (!secondDigit) {
+      setSecondDigit(newDigit);
+    } else {
+      return;
+    }
+  };
 
   return (
     <>
