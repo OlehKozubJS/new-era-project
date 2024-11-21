@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { characters } from "./dataBase";
 
 const DigitKeyboardInput = () => {
-  const [] = useState(0);
+  const [text, setText] = useState(0);
   const [firstDigit, setFirstDigit] = useState(0);
   const [secondDigit, setSecondDigit] = useState(0);
 
@@ -19,7 +19,9 @@ const DigitKeyboardInput = () => {
     }
   };
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    setText(text + characters[firstDigit][secondDigit]);
+  }, [secondDigit]);
 
   return (
     <>
