@@ -37,13 +37,7 @@ const SimplestCustomRange = () => {
     }
   };
 
-  useEffect(() => {
-    window.addEventListener("mousemove", handleMouseMove);
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, [isDraggable]);
+  useEffect(handleEventListener("mousemove", handleMouseMove), [isDraggable]);
 
   const handleMouseUp = () => {
     setIsDraggable(false);
