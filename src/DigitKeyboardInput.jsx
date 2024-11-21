@@ -6,8 +6,11 @@ const DigitKeyboardInput = () => {
   return (
     <>
       <p></p>
-      {[0].forEach((item, index, array) => {
-        return <button>{item}</button>;
+      {[0].map((item, index, array) => {
+        if (item < array.length - 1) {
+          array.push(item + 1);
+        }
+        return <button key={index}>{item}</button>;
       })}
     </>
   );
