@@ -28,9 +28,9 @@ const SimplestCustomRange = () => {
       return;
     }
 
-    const currentRangeValue = rangeValue;
     const mouseMoveX = event.clientX;
-    const newRangeValue = currentRangeValue + mouseMoveX - mouseDownX;
+
+    const newRangeValue = rangeValue + mouseMoveX - mouseDownX;
 
     if (newRangeValue >= 0 && newRangeValue <= 450) {
       setRangeValue(newRangeValue);
