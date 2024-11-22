@@ -10,12 +10,10 @@ const DigitKeyboardInput = () => {
   const handleClick = (event) => {
     const newDigit = Number(event.target.value);
 
-    if (!firstDigit) {
+    if (secondDigit) {
       setFirstDigit(newDigit);
-    } else if (!secondDigit) {
-      setSecondDigit(newDigit);
     } else {
-      return;
+      setSecondDigit(newDigit);
     }
   };
 
