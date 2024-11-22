@@ -4,11 +4,11 @@ import { characters } from "./dataBase";
 
 const DigitKeyboardInput = () => {
   const [text, setText] = useState("");
-  const [firstDigit, setFirstDigit] = useState(0);
+  const [firstDigit, setFirstDigit] = useState(1);
   const [secondDigit, setSecondDigit] = useState(0);
 
   const handleClick = (event) => {
-    const newDigit = event.target.value;
+    const newDigit = Number(event.target.value);
 
     if (!firstDigit) {
       setFirstDigit(newDigit);
@@ -32,7 +32,7 @@ const DigitKeyboardInput = () => {
       </p>
       {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((digit) => {
         return (
-          <button key={digit} value={digit}>
+          <button key={digit} value={digit} onClick={handleClick}>
             {digit}
           </button>
         );
