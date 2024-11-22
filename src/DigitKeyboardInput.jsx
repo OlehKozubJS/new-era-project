@@ -4,15 +4,18 @@ import { characters } from "./dataBase";
 
 const DigitKeyboardInput = () => {
   const [text, setText] = useState("");
+  const [isFirstDigit, setIsFirstDigit] = useState(true);
   const [firstDigit, setFirstDigit] = useState(1);
   const [secondDigit, setSecondDigit] = useState(0);
 
   const handleClick = (event) => {
     const newDigit = Number(event.target.value);
 
-    if (secondDigit) {
+    if (isFirstDigit) {
+      setIsFirstDigit(false);
       setFirstDigit(newDigit);
     } else {
+      setIsFirstDigit(true);
       setSecondDigit(newDigit);
     }
   };
