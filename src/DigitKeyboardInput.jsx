@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 import { characters } from "./dataBase";
-import {} from "./hooks";
+import { handleKeyDown } from "./hooks";
 
 const DigitKeyboardInput = () => {
   const [text, setText] = useState("");
@@ -35,7 +35,7 @@ const DigitKeyboardInput = () => {
     }
   }, [isFirstDigit]);
 
-  useEffect();
+  useEffect(handleKeyDown(), []);
 
   return (
     <>
