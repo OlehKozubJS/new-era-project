@@ -12,11 +12,11 @@ const DigitKeyboardInput = () => {
     const newDigit = Number(event.target.value);
 
     if (isFirstDigit) {
-      setIsFirstDigit(false);
       setFirstDigit(newDigit);
+      setIsFirstDigit(false);
     } else {
-      setIsFirstDigit(true);
       setSecondDigit(newDigit);
+      setIsFirstDigit(true);
     }
   };
 
