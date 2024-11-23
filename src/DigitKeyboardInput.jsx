@@ -9,7 +9,7 @@ const DigitKeyboardInput = () => {
   const [firstDigit, setFirstDigit] = useState(0);
   const [secondDigit, setSecondDigit] = useState(0);
 
-  const handleClick = (event) => {
+  const handleDigit = (event) => {
     const newDigit = Number(event.target.value);
 
     if (isFirstDigit) {
@@ -21,7 +21,7 @@ const DigitKeyboardInput = () => {
     }
   };
 
-  useEffect(handleKeyDown(handleClick), [isFirstDigit]);
+  useEffect(handleKeyDown(handleDigit), [isFirstDigit]);
 
   useEffect(() => {
     if (isFirstDigit) {
@@ -47,7 +47,7 @@ const DigitKeyboardInput = () => {
       <p>{isFirstDigit && "First digit"}</p>
       {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((digit) => {
         return (
-          <button key={digit} value={digit} onClick={handleClick}>
+          <button key={digit} value={digit} onClick={handleDigit}>
             {digit}
           </button>
         );
