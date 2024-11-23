@@ -23,6 +23,8 @@ const DigitKeyboardInput = () => {
         const diminishedText = textArray.join("");
 
         setText(diminishedText);
+      } else if (numberString === "99") {
+        setText("");
       } else {
         const firstDigit = Number(numberString[0]);
         const secondDigit = Number(numberString[1]);
@@ -32,10 +34,6 @@ const DigitKeyboardInput = () => {
       setNumberString("");
     }
   }, [numberString]);
-
-  const clearText = () => {
-    setText("");
-  };
 
   return (
     <>
@@ -48,9 +46,6 @@ const DigitKeyboardInput = () => {
           </button>
         );
       })}
-      <button type="button" onClick={clearText}>
-        Clear text
-      </button>
     </>
   );
 };
