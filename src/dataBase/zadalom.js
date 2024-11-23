@@ -62,3 +62,5 @@ const zadalomCyrillicLetters = {
   ю: "yu",
   я: "ya",
 };
+
+export { zadalomLetters, zadalomCyrillicLetters };
