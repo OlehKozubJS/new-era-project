@@ -21,6 +21,8 @@ const DigitKeyboardInput = () => {
     }
   };
 
+  useEffect(handleKeyDown(handleClick), [isFirstDigit]);
+
   useEffect(() => {
     if (isFirstDigit) {
       if (firstDigit === 9 && secondDigit === 1) {
@@ -34,8 +36,6 @@ const DigitKeyboardInput = () => {
       }
     }
   }, [isFirstDigit]);
-
-  useEffect(handleKeyDown(handleClick), []);
 
   return (
     <>
