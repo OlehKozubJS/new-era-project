@@ -6,12 +6,15 @@ const ZadalomComponent = () => {
   const [initialText, setInitialText] = useState("");
   const [zadalomText, setZadalomText] = useState("");
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-  };
-
   const handleChange = (event) => {
     setInitialText(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const initialTextArray = initialText.toLowerCase().split("");
+    const zadalomCyrillicLetters = initialTextArray.map();
   };
 
   return (
@@ -23,10 +26,11 @@ const ZadalomComponent = () => {
           name="initialTextInput"
           placeholder="Enter Cyrillic text"
           onChange={handleChange}
+          value={initialText}
         />
         <button type="submit">Zadalomize</button>
       </form>
-      <p></p>
+      <p>{zadalomText}</p>
     </div>
   );
 };
