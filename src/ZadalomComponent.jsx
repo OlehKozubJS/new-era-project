@@ -22,7 +22,9 @@ const ZadalomComponent = () => {
     const initialTextArray = initialText.split("").map((initialCharacter) => {
       return {
         character: initialCharacter.toLowerCase(),
-        isLetter: !Object.keys(zadalomCyrillicLetters).includes(cyrillicLetter),
+        isLetter: !Object.keys(zadalomCyrillicLetters).includes(
+          initialCharacter.toLowerCase()
+        ),
         isUpperCase: upperCaseCyrillicLetters.includes(initialCharacter),
       };
     });
@@ -40,6 +42,8 @@ const ZadalomComponent = () => {
             zadalomCyrillicLetter[0],
             zadalomCyrillicLetter[0].toUpperCase()
           );
+        } else {
+          return zadalomCyrillicLetter;
         }
       }
     );
