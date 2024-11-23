@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 import { characters } from "./dataBase";
+import {} from "./hooks";
 
 const DigitKeyboardInput = () => {
   const [text, setText] = useState("");
@@ -33,6 +34,8 @@ const DigitKeyboardInput = () => {
       }
     }
   }, [isFirstDigit]);
+
+  useEffect();
 
   return (
     <>
