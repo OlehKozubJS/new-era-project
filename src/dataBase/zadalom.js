@@ -128,4 +128,9 @@ const upperCaseCyrillicLetters = [
   "Я",
 ];
 
-export { zadalomLetters, zadalomCyrillicLetters };
+export {
+  zadalomLetters,
+  zadalomCyrillicLetters,
+  upperCaseLatinLetters,
+  upperCaseCyrillicLetters,
+};
