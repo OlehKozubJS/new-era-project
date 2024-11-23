@@ -16,48 +16,49 @@ const ZadalomComponent = () => {
     setInitialText(event.target.value);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    const initialTextArray = initialText.split("").map((initialCharacter) => {
+  const transformText = (text, transformationKey) => {
+    const initialTextArray = text.split("").map((initialCharacter) => {
       return {
         character: initialCharacter.toLowerCase(),
-        isLetter: Object.keys(zadalomCyrillicLetters).includes(
+        isLetter: Object.keys(transformationKey).includes(
           initialCharacter.toLowerCase()
         ),
-        isUpperCase: upperCaseCyrillicLetters.includes(initialCharacter),
+        isUpperCase:
+          upperCaseCyrillicLetters.includes(initialCharacter) ||
+          upperCaseLatinLetters.includes(initialCharacter),
       };
     });
 
-    const zadalomCyrillicLettersArray = initialTextArray.map(
+    const transformedTextArray = initialTextArray.map(
       ({ character, isLetter, isUpperCase }) => {
         if (!isLetter) {
           return character;
         }
 
-        const zadalomCyrillicLetter = zadalomCyrillicLetters[character];
+        const newLetter = transformationKey[character];
 
         if (isUpperCase) {
-          return zadalomCyrillicLetter.replace(
-            zadalomCyrillicLetter[0],
-            zadalomCyrillicLetter[0].toUpperCase()
-          );
+          return newLetter.replace(newLetter[0], newLetter[0].toUpperCase());
         } else {
-          return zadalomCyrillicLetter;
+          return newLetter;
         }
       }
     );
 
-    const zadalomLettersArray = zadalomCyrillicLettersArray
-      .join("")
-      .split("")
-      .map((zadalomCyrillicLetter) => {
-        return zadalomLetters[zadalomCyrillicLetter] || zadalomCyrillicLetter;
-      });
+    return transformedTextArray.join("");
+  };
 
-    const newZadalomText = zadalomLettersArray.join("");
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
-    setZadalomText(newZadalomText);
+    const zadalomCyrillicText = transformText(
+      initialText,
+      zadalomCyrillicLetters
+    );
+
+    const zadalomText = transformText(zadalomCyrillicText, zadalomLetters);
+
+    setZadalomText(zadalomText);
   };
 
   return (
