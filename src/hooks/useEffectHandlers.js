@@ -28,4 +28,20 @@ const handleTimeOut = (callback, timePeriod) => {
   };
 };
 
+const handleKeyDown = (key, callback) => {
+  return () => {
+    const keyDownCallback = (event) => {
+      if (event.key === key) {
+        callback();
+      }
+    };
+
+    addEventListener("keydown", keyDownCallback);
+
+    return () => {
+      removeEventListener("keydown", keyDownCallback);
+    };
+  };
+};
+
 export { handleEventListener, handleInterval, handleTimeOut };
