@@ -5,12 +5,10 @@ import { handleKeyDown } from "./hooks";
 
 const DigitKeyboardInput = () => {
   const [text, setText] = useState("");
-  const [isFirstDigit, setIsFirstDigit] = useState(true);
-  const [firstDigit, setFirstDigit] = useState(0);
-  const [secondDigit, setSecondDigit] = useState(0);
+  const [numberString, setNumberString] = useState("");
 
   const handleDigit = (event) => {
-    const newDigit = Number(event.target.value ?? event.key);
+    const newDigit = event.target.value ?? event.key;
 
     if (isFirstDigit) {
       setFirstDigit(newDigit);
@@ -25,13 +23,14 @@ const DigitKeyboardInput = () => {
 
   useEffect(() => {
     if (isFirstDigit) {
-      if (firstDigit === 9 && secondDigit === 1) {
+      if (number === "91") {
         let textArray = text.split("");
         textArray.splice(textArray.length - 1, 1);
         const diminishedText = textArray.join("");
 
         setText(diminishedText);
       } else {
+        const number = Number(numberString);
         setText(text + characters[firstDigit][secondDigit]);
       }
     }
