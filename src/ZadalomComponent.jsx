@@ -4,18 +4,26 @@ import { zadalomLetters, zadalomCyrillicLetters } from "./dataBase";
 
 const ZadalomComponent = () => {
   const [initialText, setInitialText] = useState("");
-  const [zedelomText, setZedelomText] = useState("");
+  const [zadalomText, setZadalomText] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
   };
 
-  const handleChange = (event) => {};
+  const handleChange = (event) => {
+    setInitialText(event.target.value);
+  };
 
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <textarea onChange={handleChange} />
+        <label htmlFor="initialTextInput"></label>
+        <textarea
+          id="initialTextInput"
+          name="initialTextInput"
+          placeholder="Enter Cyrillic text"
+          onChange={handleChange}
+        />
         <button type="submit"></button>
       </form>
       <p></p>
