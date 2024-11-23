@@ -22,7 +22,12 @@ const ZadalomComponent = () => {
 
     const zadalomCyrillicLettersArray = initialTextArray.map(
       (cyrillicLetter) => {
-        return zadalomCyrillicLetters[cyrillicLetter] || cyrillicLetter;
+        if (!Object.keys(zadalomCyrillicLetters).includes(cyrillicLetter)) {
+          return cyrillicLetter;
+        }
+
+        const isUpperCase = upperCaseCyrillicLetters.includes(cyrillicLetter);
+        zadalomCyrillicLetters[cyrillicLetter] || cyrillicLetter;
       }
     );
 
