@@ -28,7 +28,7 @@ const handleTimeOut = (callback, timePeriod) => {
   };
 };
 
-const handleKeyDown = (key, callback) => {
+const handleKeyDown = (callback) => {
   return () => {
     const keyDownCallback = (event) => {
       callback({ target: { value: event.key } });
