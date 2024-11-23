@@ -26,3 +26,5 @@ const zadalomLetters = {
   y: "h",
   z: "s",
 };
+
+const zadalomCyrillicLetters = {};
