@@ -1,7 +1,14 @@
 import { useState, useEffect } from "react";
 
+import { zadalomLetters, zadalomCyrillicLetters } from "./dataBase";
+
 const ZadalomComponent = () => {
-  const handleSubmit = (event) => {};
+  const [initialText, setInitialText] = useState("");
+  const [zedelomText, setZedelomText] = useState("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
 
   const handleChange = (event) => {};
 
