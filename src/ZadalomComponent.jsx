@@ -1,6 +1,11 @@
 import { useState, useEffect } from "react";
 
-import { zadalomLetters, zadalomCyrillicLetters } from "./dataBase";
+import {
+  zadalomLetters,
+  zadalomCyrillicLetters,
+  upperCaseLatinLetters,
+  upperCaseCyrillicLetters,
+} from "./dataBase";
 
 const ZadalomComponent = () => {
   const [initialText, setInitialText] = useState("");
@@ -13,7 +18,7 @@ const ZadalomComponent = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const initialTextArray = initialText.toLowerCase().split("");
+    const initialTextArray = initialText.split("");
 
     const zadalomCyrillicLettersArray = initialTextArray.map(
       (cyrillicLetter) => {
