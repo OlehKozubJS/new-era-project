@@ -36,10 +36,10 @@ const handleKeyDown = (key, callback) => {
       }
     };
 
-    addEventListener("keydown", keyDownCallback);
+    window.addEventListener("keydown", keyDownCallback);
 
     return () => {
-      removeEventListener("keydown", keyDownCallback);
+      window.removeEventListener("keydown", keyDownCallback);
     };
   };
 };
