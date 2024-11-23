@@ -14,17 +14,21 @@ const ZadalomComponent = () => {
     event.preventDefault();
 
     const initialTextArray = initialText.toLowerCase().split("");
+
     const zadalomCyrillicLettersArray = initialTextArray.map(
       (cyrillicLetter) => {
         return zadalomCyrillicLetters[cyrillicLetter];
       }
     );
+
     const zadalomLettersArray = zadalomCyrillicLettersArray.map(
       (zadalomCyrillicLetter) => {
         return zadalomLetters[zadalomCyrillicLetter];
       }
     );
+
     const newZadalomText = zadalomLettersArray.join("");
+
     setZadalomText(newZadalomText);
   };
 
