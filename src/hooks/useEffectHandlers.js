@@ -44,4 +44,4 @@ const handleKeyDown = (key, callback) => {
   };
 };
 
-export { handleEventListener, handleInterval, handleTimeOut };
+export { handleEventListener, handleInterval, handleTimeOut, handleKeyDown };
