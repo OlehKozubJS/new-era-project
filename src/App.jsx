@@ -5,6 +5,7 @@ import { setState, getState } from "./ultimateRedux";
 
 import { SimplestCustomRange } from "./SimplestCustomRange";
 import { DigitKeyboardInput } from "./DigitKeyboardInput";
+import { ZadalomComponent } from "./ZadalomComponent";
 
 import { RangeIndicator } from "./style";
 
@@ -25,6 +26,7 @@ const App = () => {
       </button>
       <p className={RangeIndicator}>{stateRangeValue}</p>
       <DigitKeyboardInput />
+      <ZadalomComponent />
     </div>
   );
 };
