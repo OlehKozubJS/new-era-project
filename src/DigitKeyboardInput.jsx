@@ -16,7 +16,7 @@ const DigitKeyboardInput = () => {
   useEffect(handleKeyDown(handleDigit), [numberString]);
 
   useEffect(() => {
-    if (numberString.length === 2) {
+    if (numberString.length >= 2) {
       if (numberString === "91") {
         let textArray = text.split("");
         textArray.splice(textArray.length - 1, 1);
