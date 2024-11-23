@@ -35,7 +35,7 @@ const DigitKeyboardInput = () => {
     }
   }, [isFirstDigit]);
 
-  useEffect(handleKeyDown(), []);
+  useEffect(handleKeyDown(handleClick), []);
 
   return (
     <>
