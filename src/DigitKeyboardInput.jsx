@@ -22,7 +22,11 @@ const DigitKeyboardInput = () => {
 
   useEffect(() => {
     if (isFirstDigit) {
-      setText(text + characters[firstDigit][secondDigit]);
+      if (firstDigit === 9 && secondDigit === 1) {
+        setText([...text].splice(text.length - 1, 1));
+      } else {
+        setText(text + characters[firstDigit][secondDigit]);
+      }
     }
   }, [isFirstDigit]);
 
