@@ -30,8 +30,8 @@ const handleTimeOut = (callback, timePeriod) => {
 
 const handleKeyDown = (callback) => {
   return () => {
-    const keyDownCallback = (key) => {
-      callback(key);
+    const keyDownCallback = (event) => {
+      callback(event);
     };
 
     window.addEventListener("keydown", keyDownCallback);
