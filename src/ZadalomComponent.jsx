@@ -28,18 +28,18 @@ const ZadalomComponent = () => {
     });
 
     const zadalomCyrillicLettersArray = initialTextArray.map(
-      (cyrillicLetter) => {
-        if (cyrillicLetter.isLetter) {
-          return cyrillicLetter;
+      ({ character, isLetter, isUpperCase }) => {
+        if (!isLetter) {
+          return character;
         }
 
-        const isUpperCase = upperCaseCyrillicLetters.includes(cyrillicLetter);
-
-        const zadalomCyrillicLetter =
-          zadalomCyrillicLetters[cyrillicLetter.toLowerCase()];
+        const zadalomCyrillicLetter = zadalomCyrillicLetters[character];
 
         if (isUpperCase) {
-          return zadalomCyrillicLetter.toUpperCase();
+          return zadalomCyrillicLetter.replace(
+            zadalomCyrillicLetter[0],
+            zadalomCyrillicLetter[0].toUpperCase()
+          );
         }
       }
     );
