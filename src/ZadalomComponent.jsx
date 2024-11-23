@@ -24,7 +24,7 @@ const ZadalomComponent = () => {
           placeholder="Enter Cyrillic text"
           onChange={handleChange}
         />
-        <button type="submit"></button>
+        <button type="submit">Zadalomize</button>
       </form>
       <p></p>
     </div>
