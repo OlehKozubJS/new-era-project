@@ -33,6 +33,10 @@ const DigitKeyboardInput = () => {
     }
   }, [numberString]);
 
+  const clearText = () => {
+    setText("");
+  };
+
   return (
     <>
       <p>{text}</p>
@@ -44,6 +48,9 @@ const DigitKeyboardInput = () => {
           </button>
         );
       })}
+      <button type="button" onClick={clearText}>
+        Clear text
+      </button>
     </>
   );
 };
