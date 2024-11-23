@@ -10,7 +10,7 @@ const DigitKeyboardInput = () => {
   const [secondDigit, setSecondDigit] = useState(0);
 
   const handleDigit = (event) => {
-    const newDigit = Number(event?.target.value ?? event.key);
+    const newDigit = Number(event.target.value ?? event.key);
 
     if (isFirstDigit) {
       setFirstDigit(newDigit);
