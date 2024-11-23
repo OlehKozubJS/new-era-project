@@ -7,6 +7,7 @@ const DigitKeyboardInput = () => {
   const [isFirstDigit, setIsFirstDigit] = useState(true);
   const [firstDigit, setFirstDigit] = useState(0);
   const [secondDigit, setSecondDigit] = useState(0);
+  const [isBackSpace, setIsBackSpace] = useState(false);
 
   const handleClick = (event) => {
     const newDigit = Number(event.target.value);
@@ -23,12 +24,21 @@ const DigitKeyboardInput = () => {
   useEffect(() => {
     if (isFirstDigit) {
       if (firstDigit === 9 && secondDigit === 1) {
-        setText([...text].splice(text.length - 1, 1));
+        setIsBackSpace(true);
       } else {
         setText(text + characters[firstDigit][secondDigit]);
       }
     }
   }, [isFirstDigit]);
+
+  useEffect(() => {
+    if (isBackSpace) {
+      let diminishedText = text;
+      [...diminishedText].splice(diminishedText.length - 1, 1);
+      setText(diminishedText);
+      setIsBackSpace(false);
+    }
+  }, [isBackSpace]);
 
   return (
     <>
@@ -37,6 +47,8 @@ const DigitKeyboardInput = () => {
         {firstDigit}
         {secondDigit}
       </p>
+      <p>{isFirstDigit}</p>
+      <p>{isBackSpace}</p>
       {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((digit) => {
         return (
           <button key={digit} value={digit} onClick={handleClick}>
