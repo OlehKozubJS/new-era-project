@@ -17,15 +17,16 @@ const ZadalomComponent = () => {
 
     const zadalomCyrillicLettersArray = initialTextArray.map(
       (cyrillicLetter) => {
-        return zadalomCyrillicLetters[cyrillicLetter];
+        return zadalomCyrillicLetters[cyrillicLetter] || cyrillicLetter;
       }
     );
 
-    const zadalomLettersArray = zadalomCyrillicLettersArray.map(
-      (zadalomCyrillicLetter) => {
-        return zadalomLetters[zadalomCyrillicLetter];
-      }
-    );
+    const zadalomLettersArray = zadalomCyrillicLettersArray
+      .join("")
+      .split("")
+      .map((zadalomCyrillicLetter) => {
+        return zadalomLetters[zadalomCyrillicLetter] || zadalomCyrillicLetter;
+      });
 
     const newZadalomText = zadalomLettersArray.join("");
 
