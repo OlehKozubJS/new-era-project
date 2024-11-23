@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/new-era-project/static/css/main.b15f5fcc.css",
-    "main.js": "/new-era-project/static/js/main.53995239.js",
+    "main.js": "/new-era-project/static/js/main.ddcac6e7.js",
     "index.html": "/new-era-project/index.html",
     "main.b15f5fcc.css.map": "/new-era-project/static/css/main.b15f5fcc.css.map",
-    "main.53995239.js.map": "/new-era-project/static/js/main.53995239.js.map"
+    "main.ddcac6e7.js.map": "/new-era-project/static/js/main.ddcac6e7.js.map"
   },
   "entrypoints": [
     "static/css/main.b15f5fcc.css",
-    "static/js/main.53995239.js"
+    "static/js/main.ddcac6e7.js"
   ]
 }
