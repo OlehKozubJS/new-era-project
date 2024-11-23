@@ -8,15 +8,9 @@ const DigitKeyboardInput = () => {
   const [numberString, setNumberString] = useState("");
 
   const handleDigit = (event) => {
-    const newDigit = event.target.value ?? event.key;
+    const digitCharacter = event.target.value ?? event.key;
 
-    if (isFirstDigit) {
-      setFirstDigit(newDigit);
-      setIsFirstDigit(false);
-    } else {
-      setSecondDigit(newDigit);
-      setIsFirstDigit(true);
-    }
+    numberString += digitCharacter;
   };
 
   useEffect(handleKeyDown(handleDigit), [isFirstDigit]);
@@ -30,7 +24,8 @@ const DigitKeyboardInput = () => {
 
         setText(diminishedText);
       } else {
-        const number = Number(numberString);
+        const firstDigit = Number(numberString[1]);
+        const secondDigit = Number(numberString[2]);
         setText(text + characters[firstDigit][secondDigit]);
       }
     }
