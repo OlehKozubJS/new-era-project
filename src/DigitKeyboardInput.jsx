@@ -8,7 +8,7 @@ const DigitKeyboardInput = () => {
   const [numberString, setNumberString] = useState("");
 
   const handleDigit = (event) => {
-    const digitCharacter = event.target.value ?? event.key;
+    const digitCharacter = event.target.value || event.key;
 
     setNumberString(numberString + digitCharacter);
   };
