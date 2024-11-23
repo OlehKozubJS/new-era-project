@@ -32,7 +32,7 @@ const handleKeyDown = (key, callback) => {
   return () => {
     const keyDownCallback = (event) => {
       if (event.key === key) {
-        callback(key);
+        callback({ target: { value: key } });
       }
     };
 
