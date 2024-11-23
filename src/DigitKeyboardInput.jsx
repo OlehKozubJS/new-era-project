@@ -21,8 +21,10 @@ const DigitKeyboardInput = () => {
   };
 
   useEffect(() => {
-    setText(text + characters[firstDigit][secondDigit]);
-  }, [secondDigit]);
+    if (isFirstDigit) {
+      setText(text + characters[firstDigit][secondDigit]);
+    }
+  }, [isFirstDigit]);
 
   return (
     <>
