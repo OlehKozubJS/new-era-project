@@ -12,7 +12,7 @@ const zadalomLetters = {
   k: "g",
   l: "r",
   m: "n",
-  n: "o",
+  n: "m",
   o: "u",
   p: "b",
   q: "x",
