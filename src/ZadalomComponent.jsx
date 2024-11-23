@@ -22,7 +22,7 @@ const ZadalomComponent = () => {
     const initialTextArray = initialText.split("").map((initialCharacter) => {
       return {
         character: initialCharacter.toLowerCase(),
-        isLetter: !Object.keys(zadalomCyrillicLetters).includes(
+        isLetter: Object.keys(zadalomCyrillicLetters).includes(
           initialCharacter.toLowerCase()
         ),
         isUpperCase: upperCaseCyrillicLetters.includes(initialCharacter),
