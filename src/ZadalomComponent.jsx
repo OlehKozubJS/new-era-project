@@ -5,6 +5,7 @@ import {
   zadalomCyrillicLetters,
   upperCaseLatinLetters,
   upperCaseCyrillicLetters,
+  characters,
 } from "./dataBase";
 
 const ZadalomComponent = () => {
@@ -18,16 +19,28 @@ const ZadalomComponent = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const initialTextArray = initialText.split("");
+    const initialTextArray = initialText.split("").map((initialCharacter) => {
+      return {
+        character: initialCharacter.toLowerCase(),
+        isLetter: !Object.keys(zadalomCyrillicLetters).includes(cyrillicLetter),
+        isUpperCase: upperCaseCyrillicLetters.includes(initialCharacter),
+      };
+    });
 
     const zadalomCyrillicLettersArray = initialTextArray.map(
       (cyrillicLetter) => {
-        if (!Object.keys(zadalomCyrillicLetters).includes(cyrillicLetter)) {
+        if (cyrillicLetter.isLetter) {
           return cyrillicLetter;
         }
 
         const isUpperCase = upperCaseCyrillicLetters.includes(cyrillicLetter);
-        zadalomCyrillicLetters[cyrillicLetter] || cyrillicLetter;
+
+        const zadalomCyrillicLetter =
+          zadalomCyrillicLetters[cyrillicLetter.toLowerCase()];
+
+        if (isUpperCase) {
+          return zadalomCyrillicLetter.toUpperCase();
+        }
       }
     );
 
