@@ -5,7 +5,7 @@ import { characters } from "./dataBase";
 const DigitKeyboardInput = () => {
   const [text, setText] = useState("");
   const [isFirstDigit, setIsFirstDigit] = useState(true);
-  const [firstDigit, setFirstDigit] = useState(1);
+  const [firstDigit, setFirstDigit] = useState(0);
   const [secondDigit, setSecondDigit] = useState(0);
 
   const handleClick = (event) => {
