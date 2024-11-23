@@ -33,9 +33,12 @@ const DigitKeyboardInput = () => {
 
   useEffect(() => {
     if (isBackSpace) {
-      let diminishedText = text;
-      [...diminishedText].splice(diminishedText.length - 1, 1);
+      let textArray = text.split("");
+      textArray.splice(diminishedText.length - 1, 1);
+      diminishedText = textArray.join("");
+
       setText(diminishedText);
+
       setIsBackSpace(false);
     }
   }, [isBackSpace]);
