@@ -1,3 +1,4 @@
 import { characters } from "./characters";
+import { zadalomLetters, zadalomCyrillicLetters } from "./zadalom";
 
-export { characters };
+export { characters, zadalomLetters, zadalomCyrillicLetters };
