@@ -23,7 +23,7 @@ const zadalomLetters = {
   v: "f",
   w: "i",
   x: "q",
-  y: "i",
+  y: "w",
   z: "s",
 };
 
